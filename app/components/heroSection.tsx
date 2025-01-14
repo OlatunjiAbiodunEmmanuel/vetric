@@ -4,10 +4,10 @@ import React from "react";
 const HeroSection = () => {
   return (
     <div
-      className="mx-auto p12 pt-8 pb-4 md:pb-28"
+      className="mx-auto p12 pt-8 pb-4 md:pb-28 bg-cover md:bg-contain"
       style={{
         backgroundImage: "url(/Glow.png)",
-        backgroundSize: "contain",
+        // backgroundSize: "contain",
         backgroundRepeat: 'no-repeat',
         backgroundPosition: "center",
       }}
