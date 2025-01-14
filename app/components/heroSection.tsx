@@ -4,7 +4,7 @@ import React from "react";
 const HeroSection = () => {
   return (
     <div
-      className="mx-auto p12 container py-8"
+      className="mx-auto p12 py-8"
       style={{
         backgroundImage: "url(/Glow.png)",
         backgroundSize: "cover",
