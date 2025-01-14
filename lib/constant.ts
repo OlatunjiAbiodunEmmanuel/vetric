@@ -15,5 +15,9 @@ export const navLinks = [
       url: "#contact",
       label: "Contact",
     },
+    {
+      url: "/Ai",
+      label: " Vetric AI",
+    },
   ];
   
