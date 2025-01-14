@@ -36,8 +36,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="fixed bottom-4 right-4">
-            <ModeToggle />
+          <div className="fixed bottom-4 right-4 hidden md:block text-[#99e570]">
+            <ModeToggle/>
           </div>
           <NavBar/>
           {children}

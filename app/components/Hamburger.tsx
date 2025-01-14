@@ -10,6 +10,7 @@ import {
 import { MenuIcon } from "lucide-react";
 import { navLinks } from "@/lib/constant";
 import Image from "next/image";
+import { ModeToggle } from "./toggle";
 
 const Hamburger = () => {
   return (
@@ -30,6 +31,9 @@ const Hamburger = () => {
                     ))}
             </SheetDescription>
           </SheetHeader>
+                    <div className="fixed bottom-4 right-4 text-[#99e570]">
+                      <ModeToggle/>
+                    </div>
         </SheetContent>
       </Sheet>
     </div>
