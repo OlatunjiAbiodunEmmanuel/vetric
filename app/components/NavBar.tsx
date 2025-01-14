@@ -5,7 +5,7 @@ import { navLinks } from "@/lib/constant";
 
 const NavBar = () => {
   return (
-    <nav className="p-4 sticky top-0 bg-[#07070A] flex justify-between px0 md:px-10 mxauto items-center bg-red300">
+    <nav className="p-4 sticky top-0 bg-[#07070A] flex justify-between md:justify-around px0 md:px-10 items-center bg-red300">
       <Image src="/llogo.png" alt="Logo" width={160} height={100} />
       <div className="hidden md:flex items-center justify-around gap-6 font-semibold text-sm">
         {navLinks.map((link) => (

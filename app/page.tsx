@@ -1,4 +1,5 @@
 import HeroSection from "./components/heroSection";
+import Lore from "./components/Lore";
 
 
 
@@ -6,8 +7,9 @@ import HeroSection from "./components/heroSection";
 
 export default function Home() {
   return (
-    <div className="h-screen max-h-screen mx-auto">
+    <div className="h-screen max-h-screen mx-auto ">
       <HeroSection/>
+      <Lore/>
     </div>
   );
 }
