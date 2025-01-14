@@ -9,7 +9,7 @@ const Lore = () => {
         alt="Lore Image"
         width={400}
         height={470}
-        className="bggreen-500 w-[300px] sm:w-[200px] md:w-[400px] h-auto"
+        className="bggreen-500 w-[300px] sm:w-[200px] md:w-[400px] h-auto mt-8"
       />
       <div className="lg:w-[641px] text-center md:text-left text-3xl md:text-5xl font-normal container">
         THE DCHEF LORE
