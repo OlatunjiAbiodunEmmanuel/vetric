@@ -1,32 +1,39 @@
-import React from 'react'
+import React from "react";
 import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-  } from "@/components/ui/sheet"
-import { MenuIcon } from 'lucide-react'
-  
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { MenuIcon } from "lucide-react";
+import { navLinks } from "@/lib/constant";
+import Image from "next/image";
+
 const Hamburger = () => {
   return (
-    <div>
-        <Sheet>
-  <SheetTrigger> <MenuIcon/></SheetTrigger>
-  <SheetContent>
-    <SheetHeader>
-      <SheetTitle>Are you absolutely sure?</SheetTitle>
-      <SheetDescription>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-      </SheetDescription>
-    </SheetHeader>
-  </SheetContent>
-</Sheet>
-
+    <div className="">
+      <Sheet>
+        <SheetTrigger>
+          {" "}
+          <MenuIcon className="text-[#99e570]"/>
+        </SheetTrigger>
+        <SheetContent className="bg-[#121212]">
+          <SheetHeader>
+            <SheetTitle> <Image src="/llogo.png" alt="Logo" width={100} height={100} /></SheetTitle>
+            <SheetDescription className="flex flex-col gap-8 font-bold text-2xl">
+               {navLinks.map((link) => (
+                      <span key={link.url}>
+                        <a href={link.url} className="text-[#99e570]">{link.label}</a>
+                      </span>
+                    ))}
+            </SheetDescription>
+          </SheetHeader>
+        </SheetContent>
+      </Sheet>
     </div>
-  )
-}
+  );
+};
 
-export default Hamburger
+export default Hamburger;
