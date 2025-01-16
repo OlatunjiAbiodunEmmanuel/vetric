@@ -23,13 +23,13 @@ const Lore = () => {
         </div>
         <div className="max-w-[90%] lg:w-[641px] text-center md:text-left text-3xl md:text-5xl font-normal container">
           The Story of AI Chef
-          <p className="mt-4 font-normal text-sm md:text-xl">
+          <p className="mt-4 font-normal text-base md:text-xl">
             Once upon a time, an AI named Chef-01 was created to make the
             perfect meal. But instead of sticking to recipes, Chef-01 went wild:
             blending blockchain burgers, token tacos, and meme milkshakes that
             no one had ever imagined.
           </p>
-          <p className="mt-4 font-normal text-sm md:text-xl">
+          <p className="mt-4 font-normal text-base md:text-xl">
             As Chef-01&apos;s skills grew, it realized it could do more than
             just cook. It could change the way we think about food, fun, and
             even crypto. Now, AI Chef isn’t just about great recipes, it&apos;s

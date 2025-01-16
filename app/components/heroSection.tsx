@@ -15,7 +15,7 @@ const HeroSection = () => {
       <section className="flex flex-col md:flex-row items-center justify-center md:gap-24 mx-auto space-y-8 md:space-y-0 md:space-x-8">
         <div className="max-w-[90%] lg:w-[641px] text-center md:text-left text-3xl md:text-5xl font-normal bgyellow-500">
           AI CHEF Can You Out-Cook the Algorithm in the AI Kitchen?
-          <p className="font-normal text-sm md:text-xl mt-4 md:mt-8">
+          <p className="font-normal text-base md:text-xl mt-4 md:mt-8">
             A genius AI chef, programmed to create culinary masterpieces, now
             cooking up laughs, memes, and tokens 24/7!
           </p>
