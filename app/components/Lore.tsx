@@ -32,7 +32,7 @@ const Lore = () => {
           <p className="mt-4 font-normal text-base md:text-xl">
             As Chef-01&apos;s skills grew, it realized it could do more than
             just cook. It could change the way we think about food, fun, and
-            even crypto. Now, AI Chef isn’t just about great recipes, it&apos;s
+            even crypto. Now, AI Chef isn&apos;t just about great recipes, it&apos;s
             about a whole new world where food meets technology, and every token
             unlocks something unexpected.
           </p>

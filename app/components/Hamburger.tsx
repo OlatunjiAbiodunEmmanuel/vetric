@@ -1,4 +1,4 @@
-import React from "react";
+
 import {
   Sheet,
   SheetContent,
@@ -11,6 +11,7 @@ import { MenuIcon } from "lucide-react";
 import { navLinks } from "@/lib/constant";
 import Image from "next/image";
 import { ModeToggle } from "./toggle";
+import Link from "next/link";
 
 const Hamburger = () => {
   return (
@@ -22,8 +23,8 @@ const Hamburger = () => {
         </SheetTrigger>
         <SheetContent className="bg-[#121212]">
           <SheetHeader>
-            <SheetTitle> <Image src="/llogo.png" alt="Logo" width={100} height={100} /></SheetTitle>
-            <SheetDescription className="flex flex-col gap-8 font-bold text-2xl">
+            <SheetTitle className="mb-6"><Link href="/"><Image src="/llogo.png" alt="Logo" width={100} height={100} /></Link></SheetTitle>
+            <SheetDescription className="flex flex-col gap-8 font-bold text-1xl left">
                {navLinks.map((link) => (
                       <span key={link.url}>
                         <a href={link.url} className="text-[#99e570]">{link.label}</a>
@@ -40,4 +41,4 @@ const Hamburger = () => {
   );
 };
 
-export default Hamburger;
+export default Hamburger; 

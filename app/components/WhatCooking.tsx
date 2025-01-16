@@ -10,7 +10,12 @@ import {
 
 const WhatCooking = () => {
   return (
-    <div className="mx-auto flex flex-col md:flex-row items-center justify-center max-w-[90%] gap-10 mt-8">
+    <section className='mx-auto'>
+        <div className='text-center mt-8 mb-10'>
+            <p className='font-normal text-2xl md:text-[55px] md:mb-8'>WHAT&apos;S COOKIN?</p>
+            <p className='font-normal text-lg md:text-4xl'>Join the Brigade</p>
+        </div>
+        <div className="mx-auto flex flex-col md:flex-row items-center justify-center max-w-[90%] gap-10 mt-8">
       {Brigade.map((item) => (
         <Card
           key={item.desp}
@@ -32,6 +37,7 @@ const WhatCooking = () => {
         </Card>
       ))}
     </div>
+    </section>
   );
 };
 
