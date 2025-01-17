@@ -5,11 +5,11 @@ import React from "react";
 
 const Logos = () => {
   return (
-    <div className="mx-auto mt-32 max-w-7xl flex flex-col items-center justify-center">
-      <p className="font-normal text-2xl md:text-5xl">
+    <div className="mx-auto mt-32 max-w7xl flex flex-col items-center justify-center">
+      <p className="font-normal text-2xl md:text-5xl text-center">
         JOIN DCHEF AND HIS BRIGADE HERE
       </p>
-      <div className="mt-8 flex items-center justify-center gap-4 max-w-[90%] ">
+      <div className="mt-8 grid grid-cols-4 md:grid-cols-8 justifycenter gap-4 max-w-[90%] ">
         {logoLinks.map((logo) => (
           <div
             key={logo.id}
