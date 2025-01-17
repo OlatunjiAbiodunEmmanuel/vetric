@@ -40,4 +40,23 @@ export const navLinks = [
       image: "/token.png",
     },
   ];
+
+  export const tokenomics = [
+    {
+      label: "Total Supply 1,000,000,000 (DChef loves a large kitchen brigade!)",
+      image: "/trend.png",
+    },
+    {
+      label: "10% of Tokens cooked & burnt!",
+      image: "/pan.png",
+    },
+    {
+      label: "No pre-sale only airdrops in this kitchen! DChef loves a fair and equitable launch!",
+      image: "/coins.png",
+    },
+    {
+      label: "The code to the recipe $DCHEFSOL Contract Address:",
+      image: "/melon.png",
+    },
+  ];
   

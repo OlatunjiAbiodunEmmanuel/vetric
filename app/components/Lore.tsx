@@ -3,7 +3,7 @@ import React from "react";
 
 const Lore = () => {
   return (
-    <div className="mx-auto p12 pt-8 pb-4 md:pb-28 bg-cover md:bg-contain">
+    <div className="mx-auto p12 pt-8 pb-4 md:pb-28 bg-cover md:bg-contain z-0">
       <section className="md:pt-12 flex flex-col-reverse md:flex-row items-center justify-center md:gap-24 mx-auto space-y-8 md:space-y-0 md:space-x-8">
         <div
           style={{
@@ -11,6 +11,7 @@ const Lore = () => {
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "bottom",
+            zIndex:'1'
           }}
         >
           <Image

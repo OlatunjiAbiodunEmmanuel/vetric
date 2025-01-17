@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const NavBar = () => {
   return (
-    <nav className="p-4 sticky top-0 z-50 bg-[#07070A] flex justify-between px0 md:px-10 items-center ">
+    <nav className="p-4 sticky top-0 z-50 shadow-md bg-[#07070A] flex justify-between px0 md:px-10 items-center ">
       <Link href="/"><Image src="/llogo.png" alt="Logo" width={160} height={100} /></Link>
       <div className="hidden md:flex items-center justify-around gap-6 font-semibold text-sm">
         {navLinks.map((link) => (
