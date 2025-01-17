@@ -12,7 +12,7 @@ const WhatCooking = () => {
         </p>
         <p className="font-normal text-lg md:text-4xl">Join the Brigade</p>
       </div>
-      <div className="mx-auto flex flex-col md:flex-row items-center justify-center max-w-[90%] gap-10 mt-8">
+      <div className="mx-auto flex flex-col md:flex-row items-center justify-center max-w-[90%] md:max-w-7xl gap-10 mt-8">
         {Brigade.map((item) => (
           <Card
             key={item.desp}

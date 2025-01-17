@@ -4,7 +4,7 @@ import React from "react";
 
 const Tokenomics = () => {
   return (
-    <div className="mx-auto w-[90%] md:max-w-6xl flex flex-col md:flex-row items-center justify-between gap8 md:gap24 mt-6 md:mt-20">
+    <div className="mx-auto max-w-[90%] md:max-w-7xl flex flex-col md:flex-row items-center justify-between gap8 md:gap24 mt-6 md:mt-20">
       <Image
         src="/tokenomics.png"
         alt="Tokenomics Image"

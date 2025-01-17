@@ -1,4 +1,5 @@
 import HeroSection from "./components/heroSection";
+import HowToBuy from "./components/HowToBuy";
 import Logos from "./components/Logos";
 import Lore from "./components/Lore";
 import Tokenomics from "./components/Tokenomics";
@@ -15,6 +16,7 @@ export default function Home() {
       <Lore/>
       <WhatCooking/>
       <Tokenomics/>
+      <HowToBuy/>
       <Logos/>
     </div>
   );
