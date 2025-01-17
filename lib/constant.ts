@@ -60,3 +60,46 @@ export const navLinks = [
     },
   ];
   
+  export const logoLinks = [
+    {
+      id:"1",
+      url: "/",
+      image: "/social1.png",
+    },
+    {
+      id:"2",
+      url: "/",
+      image: "/social2.png",
+    },
+    {
+      id:"3",
+      url: "/",
+      image: "/social3.png",
+    },
+    {
+      id:"4",
+      url: "/",
+      image: "/social4.png",
+    },
+    {
+      id:"5",
+      url: "/",
+      image: "/social5.png",
+    },
+    
+    {
+      id:"6",
+      url: "/",
+      image: "/social6.png",
+    },
+    {
+      id:"7",
+      url: "/",
+      image: "/social7.png",
+    },
+    {
+      id:"8",
+      url: "/",
+      image: "/social8.png",
+    },
+  ];

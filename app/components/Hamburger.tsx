@@ -24,7 +24,7 @@ const Hamburger = () => {
         <SheetContent className="bg-[#121212]">
           <SheetHeader>
             <SheetTitle className="mb-6"><Link href="/"><Image src="/llogo.png" alt="Logo" width={100} height={100} /></Link></SheetTitle>
-            <SheetDescription className="flex flex-col gap-8 font-bold text-1xl left">
+            <SheetDescription className="flex flex-col gap-8 font-bold text-1xl">
                {navLinks.map((link) => (
                       <span key={link.url}>
                         <a href={link.url} className="text-[#99e570]">{link.label}</a>
@@ -34,6 +34,10 @@ const Hamburger = () => {
           </SheetHeader>
                     <div className="fixed bottom-4 right-4 text-[#99e570]">
                       <ModeToggle/>
+                    </div>
+                    <div className="fixed bottom-4  text-[#99e570] flex items-center justify-between">
+                    <Image src="/llogo.png" alt="Logo" width={100} height={100} />
+                      
                     </div>
         </SheetContent>
       </Sheet>

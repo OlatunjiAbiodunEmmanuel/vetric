@@ -13,11 +13,11 @@ const Tokenomics = () => {
         className="bggreen-500 w-[300px] sm:w-[200px] md:w-[400px] h-auto mt-8"
       />
 
-      <div className="md:w-[470px]">
-        <p className="font-normal text-2xl md:text-[55px] md:mb-8">
+      <div className="md:w-[470px] mt-12 md:mt-10">
+        <p className="font-normal text-xl md:text-[54px] md:mb-8 text-center md:text-start">
           TOKENOMICS
         </p>
-        <p className="font-normal text-lg md:text-4xl">
+        <p className="font-normal text-base md:text-3xl text-center md:text-start">
           DChef wants as many Degen cooks out there to join the brigade.
         </p>
 
