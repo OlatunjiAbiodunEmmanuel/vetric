@@ -1,5 +1,6 @@
 import { logoLinks } from "@/lib/constant";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Logos = () => {
@@ -10,14 +11,21 @@ const Logos = () => {
       </p>
       <div className="mt-8 flex items-center justify-center gap-4 max-w-[90%] ">
         {logoLinks.map((logo) => (
-          <div key={logo.id} className="bg-[#6a6a6c] p-3" style={{borderRadius:"15px"}}>
-            <Image
-              src={logo.image}
-              alt="logo"
-              width={80}
-              height={80}
-              className=""
-            />
+          <div
+            key={logo.id}
+            className="bg-[#6a6a6c] p-3"
+            style={{ borderRadius: "15px" }}
+          >
+            <Link href={logo.url}>
+              {" "}
+              <Image
+                src={logo.image}
+                alt="logo"
+                width={80}
+                height={80}
+                className=""
+              />
+            </Link>
           </div>
         ))}
       </div>
