@@ -1,18 +1,19 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
-  const { prompt } = req.body;
+export async function POST(request: NextRequest) {
+  const { prompt } = await request.json();
 
-  // Check if prompt is valid
+  // Validate the prompt
   if (!prompt || typeof prompt !== 'string') {
-    return res.status(400).json({ error: 'Invalid prompt' });
+    return NextResponse.json({ error: 'Invalid prompt' }, { status: 400 });
   }
 
   try {
     const response = await fetch('https://api-inference.huggingface.co/models/gpt-3', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer YOUR_HUGGINGFACE_API_KEY`, // Use your Hugging Face API key
+        'Authorization': `Bearer YOUR_HUGGINGFACE_API_KEY`, // Use your Hugging Face API key here
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ inputs: prompt }),
@@ -21,12 +22,11 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
     const data = await response.json();
 
     if (!response.ok) {
-      return res.status(500).json({ error: 'Error from Hugging Face API' });
+      return NextResponse.json({ error: 'Error from Hugging Face API' }, { status: 500 });
     }
 
-    // Send the response back to the client
-    return res.status(200).json({ message: data });
+    return NextResponse.json({ message: data });
   } catch (error) {
-    return res.status(500).json({ error: 'Error processing the request' });
+    return NextResponse.json({ error: 'Error processing the request' }, { status: 500 });
   }
 }
