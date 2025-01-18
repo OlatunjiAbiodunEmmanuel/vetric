@@ -1,70 +1,87 @@
-"use client";
-
+'use client'
 import { useState } from "react";
 
-export default function Home() {
-  const [prompt, setPrompt] = useState("");
-  const [response, setResponse] = useState<string | null>(null);
+export default function Chat() {
+  const [prompt, setPrompt] = useState(""); 
+  const [chatHistory, setChatHistory] = useState<
+    { sender: string; message: string }[]
+  >([]); 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!prompt.trim()) return;
+
+    
+    setChatHistory((prev) => [...prev, { sender: "user", message: prompt }]);
+
     setLoading(true);
-    setResponse(null);
-    setError(null);
+    setError("");
 
     try {
-      const res = await fetch("/api/huggingface", {
+     
+      const response = await fetch("/api/wit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ prompt }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: prompt,
+          history: chatHistory.map((item) => item.message), 
+        }),
       });
 
-      if (!res.ok) {
-        throw new Error(`Error: ${res.status}`);
-      }
+      const data = await response.json();
 
-      const data = await res.json();
-      setResponse(data.message);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (err: any) {
-      setError(err.message || "Something went wrong.");
+     
+      setChatHistory((prev) => [...prev, { sender: "bot", message: data.reply }]);
+      setPrompt("");
+    } catch (err) {
+      console.error("Error:", err);
+      setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray900 textwhite bg-[#def1d5] dark:bg-[#121212] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#def1d5] dark:bg-[#121212] flex items-center justify-center p-4">
       <div className="max-w-xl w-full">
         <h1 className="text-3xl font-bold text-center mb-6">Chat with VETRIC_AI</h1>
+        <div className="mb-4">
+          <div className="space-y-2">
+            {chatHistory.map((chat, index) => (
+              <div
+                key={index}
+                className={`p-2 rounded-md ${
+                  chat.sender === "user"
+                    ? "bg-green-200 text-black text-right"
+                    : "bg-gray-200 text-black text-left"
+                }`}
+              >
+                {chat.message}
+              </div>
+            ))}
+          </div>
+        </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <textarea
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            placeholder="Type your prompt here..."
-            className="w-full p-4 textblack rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
-            rows={5}
+            placeholder="Type your message here..."
+            className="w-full p-4 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
+            rows={3}
           />
           <button
             type="submit"
-            className="w-full bg-green-500 textblack font-semibold py-2 rounded-md hover:bg-green-600 transition"
+            className="w-full bg-green-500 text-black font-semibold py-2 rounded-md hover:bg-green-600 transition"
             disabled={loading}
           >
-            {loading ? "Generating..." : "Submit"}
+            {loading ? "Generating..." : "Send"}
           </button>
         </form>
         {error && <p className="mt-4 text-red-500">{error}</p>}
-        {response && (
-          <div className="mt-6 p-4 border rounded-md border-gray-700 bg-gray-800">
-            <h2 className="text-xl font-semibold mb-2">Response:</h2>
-            <p>{response}</p>
-          </div>
-        )}
       </div>
     </div>
   );
 }
+

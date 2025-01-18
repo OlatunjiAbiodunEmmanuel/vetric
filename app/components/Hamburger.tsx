@@ -14,9 +14,9 @@ import Link from "next/link";
 
 const Hamburger = () => {
   return (
-    <div className="">
+    <div className="text-white">
       <Sheet>
-        <SheetTrigger>
+        <SheetTrigger className="text-white">
           {" "}
           <MenuIcon className="text-[#99e570 text-white" />
         </SheetTrigger>

@@ -25,7 +25,7 @@ const Tokenomics = () => {
           {tokenomics.map((item) => (
             <div
               key={item.label}
-              className="bg-[#23341C bg-[#def1d5] dark:bg-[#23341C] flex itemscenter justify-between gap-4 pe-4 roundedlg shadow-md w-auto h-auto rounded-lg"
+              className="bg-[#23341C bg-[#def1d5] dark:bg-[#23341C] shadowmd dark:shadow-sm flex itemscenter justify-between gap-4 pe-4 roundedlg shadow-md w-auto h-auto rounded-lg"
               style={{borderRadius:"15px"}}
             >
               <p className="break-words ps-8 pt-4">{item.label}</p>
