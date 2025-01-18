@@ -5,7 +5,7 @@ import React from "react";
 
 const Logos = () => {
   return (
-    <div className="mx-auto mt-32 max-w7xl flex flex-col items-center justify-center">
+    <div className="mx-auto mt-32 mb-32 max-w7xl flex flex-col items-center justify-center">
       <p className="font-normal text-2xl md:text-5xl text-center">
         JOIN DCHEF AND HIS BRIGADE HERE
       </p>

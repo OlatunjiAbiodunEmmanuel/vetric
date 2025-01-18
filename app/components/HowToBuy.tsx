@@ -4,7 +4,7 @@ import React from "react";
 const HowToBuy = () => {
   return (
     <div
-      className="flex flex-col md:flex-row justify-between max-w-[90%] md:max-w-7xl mx-auto mt-32 border-2 border-[#22341c]
+      className="flex flex-col md:flex-row items-center justify-around max-w-[90%] md:max-w-7xl mx-auto mt-32 border-2 border-[#22341c]
       "
       style={{
         backgroundImage: "url(/buy.png)",
@@ -14,7 +14,7 @@ const HowToBuy = () => {
         borderRadius: "15px",
       }}
     >
-      <div className="max-w-[626px] p-6">
+      <div className="max-w-[626px]">
         <p className="font-normal text-2xl md:text-5xl mb-2">HOW TO BUY</p>
         <p className="font-normal text-sm md:text-2xl mb-4">
           Buying the DChefSol token is a breeze for most degens. It depends
@@ -24,7 +24,7 @@ const HowToBuy = () => {
 
       </div>
 
-      <div className="p-6">
+      <div className="">
         <Image
           src="/buyimg.png"
           alt="Lore Image"

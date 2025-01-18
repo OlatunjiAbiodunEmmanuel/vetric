@@ -10,7 +10,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="mt-32 bg-[#0D0E14] flex flex-col items-center justify-center p-10 gap-8">
+    <div className=" bg-[#0D0E14] flex flex-col items-center justify-center p-10 gap-8">
       <Image
         src="/llogo.png"
         alt="Logo"
