@@ -46,12 +46,12 @@ export default function Home() {
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             placeholder="Type your prompt here..."
-            className="w-full p-4 text-black rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full p-4 textblack rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
             rows={5}
           />
           <button
             type="submit"
-            className="w-full bg-green-500 text-black font-semibold py-2 rounded-md hover:bg-green-600 transition"
+            className="w-full bg-green-500 textblack font-semibold py-2 rounded-md hover:bg-green-600 transition"
             disabled={loading}
           >
             {loading ? "Generating..." : "Submit"}

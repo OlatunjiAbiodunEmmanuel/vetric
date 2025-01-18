@@ -25,7 +25,7 @@ const Footer = () => {
         height={158}
         className=""
       />
-      <div className="w-7xl h-1 w-[1107px w-[80%] bg-gray-500  mt-3"></div>
+      <div className="w-7xl h-[0.1px] w-[1107px w-[80%] bg-gray-500  mt-3"></div>
 
       <footer className="mt-6 w-full px-4 text-center flex justify-between max-w-[80%] items-center">
         <p className="text-sm font-light flex items-center justify-between ">

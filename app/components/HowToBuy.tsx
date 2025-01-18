@@ -30,7 +30,7 @@ const HowToBuy = () => {
           alt="Lore Image"
           width={400}
           height={470}
-          className="bggreen-500 w-[300px] sm:w-[200px] md:w-[400px] h-auto mt-8"
+          className="bggreen-500 w-[300px] sm:w-[200px] md:w-[400px] h-auto mt8"
         />
       </div>
     </div>
