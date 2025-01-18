@@ -17,7 +17,7 @@ const WhatCooking = () => {
           <Card
             key={item.desp}
             style={{borderRadius:"15px"}}
-            className="border-0 flex flex-col flex-grow flex-shrink-0 basis-[300px] md:h-[455px] justify-between text p-4 shadow-md bg-[#23341C] text-white"
+            className="border-0 flex flex-col flex-grow flex-shrink-0 basis-[300px] md:h-[455px] justify-between text p-4 shadow-md bg-[#def1d5] dark:bg-[#23341C]"
           >
             <CardHeader className="flex flex-col">
               <Image

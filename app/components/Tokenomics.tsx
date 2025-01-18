@@ -25,14 +25,14 @@ const Tokenomics = () => {
           {tokenomics.map((item) => (
             <div
               key={item.label}
-              className="bg-[#23341C] flex itemscenter justify-between gap-4 pe-4 roundedlg shadow-md w-auto h-auto rounded-lg"
+              className="bg-[#23341C bg-[#def1d5] dark:bg-[#23341C] flex itemscenter justify-between gap-4 pe-4 roundedlg shadow-md w-auto h-auto rounded-lg"
               style={{borderRadius:"15px"}}
             >
               <p className="break-words ps-8 pt-4">{item.label}</p>
-              <div className="bg-[#C79576] p-4 flex-shrink-0">
+              <div className=" p-4 flex-shrink-0  bg-[#eaeaf1 dark:bg-[#C79576]">
                 <Image
                   src={item.image}
-                  alt={item.label}
+                  alt={item.label} 
                   width={136}
                   height={140}
                 />

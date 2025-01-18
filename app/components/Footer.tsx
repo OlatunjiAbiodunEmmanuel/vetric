@@ -39,7 +39,7 @@ const Footer = () => {
           @ 2024
         </p>
 
-        <div className="flex items-center justify-center gap-4 mt-4">
+        <div className="md:flex items-center justify-center gap-4 mt-4 hidden">
           <Instagram className="text-white hover:text-gray-400 cursor-pointer" />
           <Facebook className="text-white hover:text-gray-400 cursor-pointer" />
           <Youtube className="text-white hover:text-gray-400 cursor-pointer" />

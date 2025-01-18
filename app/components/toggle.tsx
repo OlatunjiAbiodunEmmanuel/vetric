@@ -1,40 +1,32 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+import React from "react";
+import { useTheme } from "next-themes";
+import { Moon, Sun } from "lucide-react";
 
 export function ModeToggle() {
-  const { setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
+  const isDarkMode = theme === "dark";
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="border-0">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="text-[#99e570] border-0 shadow-sm">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  )
+    <div className="flex items-center">
+      <Sun className={`h-5 w-5 ${isDarkMode ? "text-gray-400" : "text-yellow-500"}`} />
+      <label className="relative inline-flex items-center mx-3 cursor-pointer">
+        <input
+          type="checkbox"
+          checked={isDarkMode}
+          onChange={() => setTheme(isDarkMode ? "light" : "dark")}
+          className="sr-only"
+        />
+        <div className="w-12 h-5 bg-gray-300 dark:bg-gray-600 rounded-full peer-focus:ring-2 peer-focus:ring-green-400 dark:peer-focus:ring-green-600 transition-all">
+          <div
+            className={`w-5 h-5 bg-white dark:bg-gray-900 rounded-full shadow-md transform transition-transform ${
+              isDarkMode ? "translate-x-6" : "translate-x-1"
+            }`}
+          ></div>
+        </div>
+      </label>
+      <Moon className={`h-5 w-5 ${isDarkMode ? "text-blue-500" : "text-gray-400"}`} />
+    </div>
+  );
 }
