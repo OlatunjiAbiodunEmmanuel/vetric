@@ -1,11 +1,13 @@
 import React from 'react'
-import AICHAT from './components/AICHAT'
+import Chat from './components/Chat'
+// import AICHAT from './components/AICHAT'
 
 
 const page = () => {
   return (
     <div className="mx-auto">
-       <AICHAT/>
+       {/* <AICHAT/> */}
+       <Chat />
     </div>
   )
 }
