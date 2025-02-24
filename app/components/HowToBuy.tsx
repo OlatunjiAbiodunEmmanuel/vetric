@@ -3,7 +3,7 @@ import React from "react";
 
 const HowToBuy = () => {
   return (
-    <div
+    <div id="how-to-buy"
       className="flex flex-col md:flex-row items-center justify-around max-w-[90%] md:max-w-7xl mx-auto mt-32 border-2 border-[#22341c]
       "
       style={{
