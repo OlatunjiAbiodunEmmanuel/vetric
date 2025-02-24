@@ -1,5 +1,4 @@
 
-
 export const navLinks = [
     {
       url: "#about-us",
@@ -18,7 +17,7 @@ export const navLinks = [
       label: "Contact",
     },
     {
-      url: "/vetric-ai",
+      url: "/ai",
       label: " Vetric AI",
     },
   ];
