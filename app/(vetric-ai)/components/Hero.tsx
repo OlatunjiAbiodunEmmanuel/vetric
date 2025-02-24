@@ -19,7 +19,7 @@ const Hero = () => {
             placeholder="Generate your dream Image"
             className="h-full outline-none w-full block flex-1 placeholder:text-xs sm:placeholder:text-base bg-transparent rounde"
           />
-          <Button className="bg-black rounded-md px-6">Generate</Button>
+          <Button className="bg-green-400 rounded-md px-6">Generate</Button>
         </div>
         <div className="flex items-center mt-6 space-x-4 flex-wrap space-y-3">
             <p>
