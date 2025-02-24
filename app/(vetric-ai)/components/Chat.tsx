@@ -10,7 +10,7 @@ import { Recipe } from "@/lib/types";
 
 async function fetchRecipes(prompt: string): Promise<Recipe[]> {
   
-  const response = await fetch("/api/chat", {
+  const response = await fetch("", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export default function Chat() {
   const [isLoading, setIsLoading] = useState(false);
 
   async function onSubmit() {
-    if (!prompt.trim()) return; // Prevent empty submissions
+    if (!prompt.trim()) return; 
     setIsLoading(true);
     try {
       const response = await fetchRecipes(prompt);
