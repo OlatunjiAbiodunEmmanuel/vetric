@@ -55,7 +55,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center px-4">
+    <div className="w-full min-h-screen flex flex-col items-center px-4 mt-8 md:mt-16">
       <div className="text-center">
         {/* Hero Title */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-orange-300 to-cyan-500 bg-clip-text text-transparent leading-tight">
