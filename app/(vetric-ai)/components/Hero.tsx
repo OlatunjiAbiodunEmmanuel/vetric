@@ -1,7 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 import { Loader } from "lucide-react";
@@ -12,6 +11,11 @@ const Hero = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleImageGeneration = async () => {
+    if (!prompt.trim()) {
+      toast.error("Please enter a prompt before generating.");
+      return;
+    }
+
     setIsLoading(true);
     const options = {
       method: "POST",
@@ -25,64 +29,66 @@ const Hero = () => {
         inputs: prompt,
       },
     };
+
     try {
       const response = await axios.request(options);
       setImage(response?.data.url);
-      toast.success("Image generated successfully");
-      console.log(response.data);
+      toast.success("Image generated successfully!");
     } catch (error) {
-      if (axios.isAxiosError(error) && error.message) {
-        toast.error(error.response?.data.message);
-      } else {
-        toast.error("an unexpected error occured");
-      }
+      toast.error(
+        axios.isAxiosError(error) && error.response?.data.message
+          ? error.response.data.message
+          : "An unexpected error occurred."
+      );
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleDownloadImage=()=>{
+  const handleDownloadImage = () => {
+    if (!image) return;
     const link = document.createElement("a");
-    link.target="_blank";
-    link.href=image;
-    link.download="generated-img.jpg";
-    link.click()
-
-  }
+    link.href = image;
+    link.target = "_blank";
+    link.download = "generated-image.jpg";
+    link.click();
+  };
 
   return (
-    <div className="w-full min-h-screen relative mx-auto mt-8 md:mt-20">
+    <div className="w-full min-h-screen flex flex-col items-center justify-center px-4">
       <div className="text-center">
+        {/* Hero Title */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-orange-300 to-cyan-500 bg-clip-text text-transparent leading-tight">
           Create a Beautiful Image with <br /> Vetric AI
         </h1>
 
-        <p className="mt-4 text-sm md:text-lg font-medium">
+        {/* Subtext */}
+        <p className="mt-4 text-sm md:text-lg font-medium text-gray-300">
           Get started with our AI-powered image generator tools
         </p>
 
-        <div
-          className="h-14 mx-auto md:h-16 w-[95%] sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] bg-gray-600 rounded-lg 
-        mt-12 px-2 md:px-6 flex items-center justify-between"
-        >
+        {/* Input & Button Section */}
+        <div className="mt-8 w-full sm:w-[90%] md:w-[60%] lg:w-[50%] xl:w-[40%] flex items-center bg-gray-700 rounded-lg shadow-lg mx-auto">
           <input
             type="text"
             placeholder="Generate your dream image..."
-            className="h-full outline-none w-full block flex-1 placeholder:text-xs sm:placeholder:text-base bg-transparent "
+            className="h-12 md:h-14 flex-1 bg-transparent text-white placeholder-gray-400 outline-none px-4 text-sm md:text-base"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
           />
           <Button
             onClick={handleImageGeneration}
             className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-r-lg shadow-md transition"
+            disabled={isLoading}
           >
-            Generate
+            {isLoading ? "Generating..." : "Generate"}
           </Button>
         </div>
 
+        {/* Popular Tags */}
         <div className="flex flex-wrap justify-center items-center mt-6 gap-3">
           <p className="bg-gradient-to-r from-orange-300 to-cyan-500 bg-clip-text text-transparent font-medium">
-            Popular Tags :
+            Popular Tags:
           </p>
           {["Nature", "Fantasy", "Cyberpunk", "Anime"].map((tag, index) => (
             <Button
@@ -94,19 +100,25 @@ const Hero = () => {
           ))}
         </div>
 
+        {/* Loader (Centered) */}
         {isLoading && (
-          <div>
-            <Loader className="animate-spin mt-6 text-center" />
+          <div className="flex justify-center mt-6">
+            <Loader className="animate-spin text-gray-300" />
           </div>
         )}
+
+        {/* Generated Image */}
         {image && (
           <div className="mt-8 flex flex-col items-center">
             <img
               src={image}
-              alt="Ai image"
-              className="max-w-full h-[500px] rounded-lg shadow-lg"
+              alt="Generated AI"
+              className="max-w-full h-[500px] object-cover rounded-lg shadow-lg"
             />
-            <Button onClick={handleDownloadImage} className="bg-orange-500-500 hover:bg-orange-800 bg-gradient-to-r from-orange-300 to-cyan-500 bg-clip-text text-transparent  px-6 py-3 ">
+            <Button
+              onClick={handleDownloadImage}
+              className="mt-4 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md shadow-md transition"
+            >
               Download
             </Button>
           </div>
