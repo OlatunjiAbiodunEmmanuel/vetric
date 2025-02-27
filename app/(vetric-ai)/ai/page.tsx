@@ -5,7 +5,7 @@ import RecentImg from "../RecentImage/RecentImg";
 
 const page = () => {
   return (
-    <div className="mxauto h-screen">
+    <div className="mxauto min-h-screen">
       <Hero />
       <RecentImg />
       <div className="fixed bottom-4 right-4  md:hidden text-black dark:text-white">

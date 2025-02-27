@@ -56,7 +56,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="w-full bgred-500 items-center px-4 mt-8 md:mt-16 mb-16 mxauto">
+    <div className="w-full items-center px-4 mt-8 md:mt-16 mb-16 mxauto">
       <div className="text-center">
         <h1 className="text-3xl sm:text-4xl text-center md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-orange-300 to-cyan-500 bg-clip-text text-transparent leading-tight">
           Create a Beautiful Image with Vetric AI
