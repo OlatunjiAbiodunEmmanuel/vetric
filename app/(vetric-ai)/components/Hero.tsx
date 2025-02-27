@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
@@ -55,19 +56,16 @@ const Hero = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center px-4 mt-8 md:mt-16">
+    <div className="w-full bgred-500 items-center px-4 mt-8 md:mt-16 mb-16 mxauto">
       <div className="text-center">
-      
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-orange-300 to-cyan-500 bg-clip-text text-transparent leading-tight">
-          Create a Beautiful Image with <br /> Vetric AI
+        <h1 className="text-3xl sm:text-4xl text-center md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-orange-300 to-cyan-500 bg-clip-text text-transparent leading-tight">
+          Create a Beautiful Image with Vetric AI
         </h1>
 
-      
         <p className="mt-4 text-sm md:text-lg font-medium text-gray-300">
           Get started with our AI-powered image generator tools
         </p>
 
-        
         <div className="mt-8 w-full sm:w-[90%] md:w-[60%] lg:w-[50%] xl:w-[40%] flex items-center bg-gray-700 rounded-lg shadow-lg mx-auto">
           <input
             type="text"
@@ -78,14 +76,13 @@ const Hero = () => {
           />
           <Button
             onClick={handleImageGeneration}
-            className="bg-green500 hover:bg-green600 text-white px-6 py-3 rounded-r-lg shadowmd transition bg-gradient-to-r from-orange-300 to-cyan-500 bg-clip-text text-transparent"
+            className=" text-white px-6 py-3 rounded-r-lg shadowmd transition bg-gradient-to-r from-orange-300 to-cyan-500 bg-clip-text text-transparent"
             disabled={isLoading}
           >
             {isLoading ? "Generating..." : "Generate"}
           </Button>
         </div>
 
-       
         <div className="flex flex-wrap justify-center items-center mt-6 gap-3">
           <p className="bg-gradient-to-r from-orange-300 to-cyan-500 bg-clip-text text-transparent font-medium">
             Popular Tags:
@@ -100,14 +97,12 @@ const Hero = () => {
           ))}
         </div>
 
-       
         {isLoading && (
           <div className="flex justify-center mt-6">
             <Loader className="animate-spin text-gray-300" />
           </div>
         )}
 
-       
         {image && (
           <div className="mt-8 flex flex-col items-center">
             <img

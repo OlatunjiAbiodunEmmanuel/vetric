@@ -25,6 +25,7 @@
     "openai": "^4.79.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-multi-carousel": "^2.8.5",
     "sonner": "^2.0.1",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
